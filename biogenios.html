@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biogênios - Cursinho de Biologia para Medicina</title>
+    <meta name="description" content="O único cursinho de biologia com correção individual de discursivas e plano de estudo personalizado. Videoaulas, simulados, tira-dúvidas direto com o professor.">
+    <meta name="author" content="Biogênios">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Biogênios - Cursinho de Biologia para Medicina">
+    <meta property="og:description" content="O único cursinho de biologia com correção individual de discursivas e plano de estudo personalizado.">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@biogenios">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #22c55e, #3b82f6);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
+        }
+        
+        .btn-outline {
+            border: 2px solid #22c55e;
+            color: #22c55e;
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: #f0fdf4;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #22c55e, #3b82f6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #166534, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .logo-text p {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #374151;
+            transition: color 0.3s ease;
+        }
+        
+        .nav a:hover {
+            color: #22c55e;
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f0fdf4, #eff6ff);
+        }
+        
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero-title-brand {
+            background: linear-gradient(135deg, #166534, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image-container {
+            background: linear-gradient(135deg, #4ade80, #3b82f6);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        
+        .hero-badge {
+            position: absolute;
+            background: white;
+            padding: 15px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .hero-badge-1 {
+            top: -15px;
+            right: -15px;
+        }
+        
+        .hero-badge-2 {
+            bottom: -15px;
+            left: -15px;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            font-size: 20px;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #166534, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Differentials */
+        .differentials {
+            background: white;
+        }
+        
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .differential-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f3f4f6;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .differential-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: transparent;
+        }
+        
+        .differential-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .differential-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .differential-card:hover .differential-icon {
+            transform: scale(1.1);
+        }
+        
+        .differential-card h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+        
+        .differential-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        /* Features */
+        .features {
+            background: linear-gradient(135deg, #f9fafb, #eff6ff);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 28px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #1f2937;
+        }
+        
+        .feature-card p {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Study Plan */
+        .study-plan {
+            background: white;
+        }
+        
+        .plan-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .plan-feature {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 30px;
+            border-left: 4px solid #22c55e;
+        }
+        
+        .plan-feature h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+        
+        .plan-feature p {
+            color: #6b7280;
+            margin-bottom: 15px;
+        }
+        
+        .plan-feature ul {
+            list-style: none;
+        }
+        
+        .plan-feature li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+        
+        .plan-feature li::before {
+            content: "✓";
+            color: #22c55e;
+            font-weight: bold;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #f9fafb, #eff6ff);
+        }
+        
+        .testimonials-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .testimonial-stat {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #166534, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 48px;
+            color: #e5e7eb;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .testimonial-info h4 {
+            font-weight: bold;
+            color: #1f2937;
+        }
+        
+        .testimonial-info p {
+            color: #22c55e;
+            font-weight: 600;
+        }
+        
+        .testimonial-stars {
+            display: flex;
+            gap: 2px;
+            margin-top: 5px;
+        }
+        
+        .star {
+            color: #fbbf24;
+            font-size: 16px;
+        }
+        
+        .testimonial-text {
+            color: #6b7280;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #166534, #1e40af, #7c3aed);
+            color: white;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .cta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .cta h2 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .cta-subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .cta-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-box h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .pricing-highlight {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .price-main {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .price-sub {
+            font-size: 14px;
+        }
+        
+        .btn-cta {
+            background: white;
+            color: #166534;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .guarantee {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            margin-top: 30px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: white;
+        }
+        
+        .footer .container {
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-brand .logo {
+            margin-bottom: 15px;
+        }
+        
+        .footer-brand p {
+            color: #d1d5db;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .cta h2 {
+                font-size: 36px;
+            }
+            
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .differentials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">📚</div>
+                <div class="logo-text">
+                    <h1>Biogênios</h1>
+                    <p>Biologia para Medicina</p>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <a href="#inicio">Início</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#conteudo">Conteúdo</a>
+                <a href="#plano">Plano de Estudo</a>
+                <a href="#" class="btn btn-primary">Começar Agora</a>
+            </nav>
+            
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                    <span class="hero-title-brand">Biogênios</span><br>
+                    O Futuro da Sua Aprovação em Medicina
+                </h1>
+                <p>O único cursinho de biologia com correção individual de discursivas e plano de estudo personalizado que considera tempo de exercícios, não apenas aulas.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">▶ Começar Agora</a>
+                    <a href="#" class="btn btn-outline">Ver Demonstração</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-icon" style="background: #dcfce7;">👥</div>
+                        <div class="stat-number">5.000+</div>
+                        <div class="stat-label">Alunos Aprovados</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon" style="background: #dbeafe;">🏆</div>
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Taxa de Aprovação</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon" style="background: #f3e8ff;">⏰</div>
+                        <div class="stat-number">24h</div>
+                        <div class="stat-label">Suporte WhatsApp</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1582203989433-62c2cf9f8194?w=600&h=400&fit=crop" alt="Estudante de medicina estudando biologia">
+                </div>
+                <div class="hero-badge hero-badge-1">
+                    <div class="stat-number" style="color: #22c55e;">100%</div>
+                    <div class="stat-label">Online</div>
+                </div>
+                <div class="hero-badge hero-badge-2">
+                    <div class="stat-number" style="color: #3b82f6;">1:1</div>
+                    <div class="stat-label">Correção Individual</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section id="diferenciais" class="section differentials">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="gradient-text">Nossos Diferenciais</span></h2>
+                <p>O que torna o Biogênios único no mercado de cursinhos de biologia</p>
+            </div>
+            
+            <div class="differentials-grid">
+                <div class="differential-card">
+                    <div class="differential-badge" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">Exclusivo</div>
+                    <div class="differential-icon" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">⭐</div>
+                    <h3>Correção Individual de Discursivas</h3>
+                    <p>O ÚNICO curso de biologia que oferece correção personalizada das suas questões discursivas</p>
+                </div>
+                
+                <div class="differential-card">
+                    <div class="differential-badge" style="background: linear-gradient(135deg, #4ade80, #3b82f6);">24h</div>
+                    <div class="differential-icon" style="background: linear-gradient(135deg, #4ade80, #3b82f6);">💬</div>
+                    <h3>Tira-Dúvidas Direto com Professor</h3>
+                    <p>WhatsApp direto com o professor para esclarecer todas as suas dúvidas em tempo real</p>
+                </div>
+                
+                <div class="differential-card">
+                    <div class="differential-badge" style="background: linear-gradient(135deg, #a855f7, #ec4899);">Inovador</div>
+                    <div class="differential-icon" style="background: linear-gradient(135deg, #a855f7, #ec4899);">📅</div>
+                    <h3>Cronograma que Conta Exercícios</h3>
+                    <p>Plano de estudo que considera tempo de exercícios, não apenas aulas - um diferencial único</p>
+                </div>
+                
+                <div class="differential-card">
+                    <div class="differential-badge" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">Exclusivo</div>
+                    <div class="differential-icon" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">🎯</div>
+                    <h3>Simulados com Questões Inéditas</h3>
+                    <p>Questões exclusivas criadas especialmente para testar seu conhecimento de forma única</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; text-align: center;">
+                <div style="background: linear-gradient(135deg, #f0fdf4, #eff6ff); border-radius: 24px; padding: 40px; max-width: 800px; margin: 0 auto;">
+                    <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">Por que escolher o Biogênios?</h3>
+                    <p style="font-size: 18px; color: #6b7280; margin-bottom: 25px;">Somos o único cursinho que entende que aprovar em medicina vai além de assistir aulas. Precisamos praticar, corrigir e personalizar o estudo para cada aluno.</p>
+                    <a href="#" class="btn btn-primary">Conhecer Todos os Diferenciais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="conteudo" class="section features">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="gradient-text">Conteúdo Completo</span></h2>
+                <p>Tudo que você precisa para dominar a biologia e conquistar sua vaga na medicina</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">▶</div>
+                    <h3>Videoaulas Completas</h3>
+                    <p>Aulas detalhadas com os melhores professores de biologia</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">📖</div>
+                    <h3>Guias Mestres</h3>
+                    <p>Apostilas de conteúdo completas e organizadas</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a);">📄</div>
+                    <h3>Apostilas de Questões</h3>
+                    <p>Milhares de questões organizadas por tópico</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #a855f7, #9333ea);">📊</div>
+                    <h3>Simulados Progressivos</h3>
+                    <p>Avaliações que evoluem com seu aprendizado</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">✏️</div>
+                    <h3>Simulados Inéditos</h3>
+                    <p>Questões exclusivas criadas pelos nossos professores</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #4ade80, #3b82f6);">💬</div>
+                    <h3>Suporte WhatsApp</h3>
+                    <p>Tire dúvidas diretamente com o professor</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #6366f1, #a855f7);">⚡</div>
+                    <h3>Flashcards Inteligentes</h3>
+                    <p>Memorização ativa com repetição espaçada</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #be185d);">📹</div>
+                    <h3>Aulas ao Vivo</h3>
+                    <p>Revisões ao vivo para esclarecer dúvidas</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #14b8a6, #0891b2);">👥</div>
+                    <h3>Revisão Orientada</h3>
+                    <p>Professor orienta sua revisão personalizada</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #eab308);">🔖</div>
+                    <h3>Questões por Banca</h3>
+                    <p>Apostilas organizadas por instituição</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Plan Section -->
+    <section id="plano" class="section study-plan">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="gradient-text">Plano de Estudo Personalizado</span></h2>
+                <p>O único cronograma que considera o tempo real de exercícios, não apenas de aulas</p>
+            </div>
+            
+            <div class="plan-features">
+                <div class="plan-feature">
+                    <h3>🗓️ Cronograma Inteligente</h3>
+                    <p>Defina seus dias de estudo, tempo disponível e velocidade de aprendizado</p>
+                    <ul>
+                        <li>Escolha os dias da semana</li>
+                        <li>Defina o tempo diário</li>
+                        <li>Ajuste a velocidade das aulas</li>
+                        <li>Inclui tempo para exercícios</li>
+                    </ul>
+                </div>
+                
+                <div class="plan-feature">
+                    <h3>⏱️ Tempo Real de Exercícios</h3>
+                    <p>Nosso diferencial: calculamos o tempo necessário para fazer os exercícios</p>
+                    <ul>
+                        <li>Tempo estimado por questão</li>
+                        <li>Dificuldade progressiva</li>
+                        <li>Pausa para correção</li>
+                        <li>Revisão programada</li>
+                    </ul>
+                </div>
+                
+                <div class="plan-feature">
+                    <h3>📈 Acompanhamento Personalizado</h3>
+                    <p>Monitore seu progresso e ajuste o plano conforme necessário</p>
+                    <ul>
+                        <li>Relatórios de progresso</li>
+                        <li>Análise de desempenho</li>
+                        <li>Recomendações automáticas</li>
+                        <li>Ajustes em tempo real</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; background: #f8fafc; border-radius: 16px; padding: 40px;">
+                <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">Faça seu Cronograma Agora!</h3>
+                <p style="color: #6b7280; margin-bottom: 25px;">Crie um plano de estudos que realmente funciona para sua rotina</p>
+                <a href="#" class="btn btn-primary">Criar Meu Cronograma</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="gradient-text">Nossos Aprovados</span></h2>
+                <p>Veja o que dizem os estudantes que conquistaram suas vagas na medicina</p>
+            </div>
+            
+            <div class="testimonials-stats">
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">5.000+</div>
+                    <div>Alunos Aprovados</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">95%</div>
+                    <div>Taxa de Aprovação</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">500+</div>
+                    <div>Questões Corrigidas/Mês</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">24h</div>
+                    <div>Suporte WhatsApp</div>
+                </div>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b19c?w=100&h=100&fit=crop&crop=face" alt="Ana Clara" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Ana Clara</h4>
+                            <p>FMUSP - 2023</p>
+                            <div class="testimonial-stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"A correção individual das discursivas foi o diferencial que me fez passar. O professor apontava exatamente onde eu estava errando!"</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Pedro Santos" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Pedro Santos</h4>
+                            <p>UNIFESP - 2023</p>
+                            <div class="testimonial-stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"O cronograma que considera tempo de exercícios mudou minha forma de estudar. Finalmente consegui organizar meus estudos de verdade!"</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=face" alt="Maria Eduarda" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Maria Eduarda</h4>
+                            <p>UFRJ - 2024</p>
+                            <div class="testimonial-stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"O suporte via WhatsApp é incrível! Sempre que tinha dúvida, o professor respondia rapidamente. Isso fez toda diferença."</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Lucas Oliveira" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Lucas Oliveira</h4>
+                            <p>UFMG - 2024</p>
+                            <div class="testimonial-stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Os simulados com questões inéditas me prepararam para situações que não encontrava em outros lugares. Fundamental!"</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; background: white; border-radius: 24px; padding: 40px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); text-align: center;">
+                <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">Seja o Próximo Aprovado!</h3>
+                <p style="color: #6b7280; margin-bottom: 25px;">Junte-se aos milhares de estudantes que já conquistaram suas vagas na medicina</p>
+                <a href="#" class="btn btn-primary">Começar Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-badge">
+                    🎁 Oferta Especial - Tempo Limitado
+                </div>
+                
+                <h2>Sua Aprovação em Medicina Começa Agora</h2>
+                <p class="cta-subtitle">Seja parte do cursinho que mais aprova em medicina no Brasil</p>
+                
+                <div class="cta-grid">
+                    <div class="cta-box">
+                        <h3>O que você vai ter:</h3>
+                        <ul class="benefits-list">
+                            <li>Correção individual de discursivas</li>
+                            <li>Cronograma personalizado com exercícios</li>
+                            <li>WhatsApp direto com professor</li>
+                            <li>Simulados com questões inéditas</li>
+                            <li>Guias mestres completos</li>
+                            <li>Aulas ao vivo de revisão</li>
+                            <li>Flashcards inteligentes</li>
+                            <li>Suporte 24h</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cta-box">
+                        <div class="pricing-highlight">95%</div>
+                        <div class="pricing-subtitle">Taxa de Aprovação</div>
+                        
+                        <div class="pricing-box">
+                            <div class="price-main">12x R$ 97,90</div>
+                            <div class="price-sub">ou R$ 997 à vista com 15% de desconto</div>
+                        </div>
+                        
+                        <a href="#" class="btn-cta">
+                            Quero Me Inscrever Agora →
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="guarantee">
+                    <h3 style="font-size: 20px; font-weight: bold; margin-bottom: 15px;">Garantia de 30 Dias</h3>
+                    <p style="font-size: 14px; opacity: 0.9;">Se não ficar satisfeito, devolvemos 100% do seu dinheiro. Sem perguntas, sem complicações.</p>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: center;">
+                    <p style="font-size: 14px; opacity: 0.75;">Mais de 5.000 alunos já confiaram no Biogênios para realizar o sonho da medicina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">📚</div>
+                        <div class="logo-text">
+                            <h3 style="font-size: 24px; font-weight: bold; background: linear-gradient(135deg, #4ade80, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Biogênios</h3>
+                            <p style="font-size: 12px; color: #9ca3af;">Biologia para Medicina</p>
+                        </div>
+                    </div>
+                    <p>O cursinho de biologia mais completo para quem quer conquistar uma vaga na medicina.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="color: #4ade80;">Curso</h4>
+                    <ul>
+                        <li><a href="#">Videoaulas</a></li>
+                        <li><a href="#">Guias Mestres</a></li>
+                        <li><a href="#">Simulados</a></li>
+                        <li><a href="#">Cronograma</a></li>
+                        <li><a href="#">Correção Individual</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="color: #3b82f6;">Suporte</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Reembolso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="color: #a855f7;">Contato</h4>
+                    <ul style="margin-bottom: 20px;">
+                        <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                            <span style="color: #4ade80;">✉️</span>
+                            contato@biogenios.com.br
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                            <span style="color: #3b82f6;">📞</span>
+                            (11) 99999-9999
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                            <span style="color: #a855f7;">📍</span>
+                            São Paulo, SP
+                        </li>
+                    </ul>
+                    
+                    <h5 style="font-weight: 600; margin-bottom: 12px;">Redes Sociais</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link" style="background: linear-gradient(135deg, #ec4899, #be185d);">📷</a>
+                        <a href="#" class="social-link" style="background: linear-gradient(135deg, #ef4444, #dc2626);">📺</a>
+                        <a href="#" class="social-link" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">📘</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Biogênios - Todos os direitos reservados. Desenvolvido com ♥ para futuros médicos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (placeholder - you can expand this)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.addEventListener('click', function() {
+            alert('Menu mobile - implementar conforme necessário');
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
